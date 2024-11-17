@@ -1,0 +1,25 @@
+<SelectUrlScreenView>
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            title: "Перелiк рецептiв"
+            elevation: 4
+            pos_hint: {"top": 1}
+            md_bg_color:"#31C823"
+            specific_text_color: "#000000"
+            left_action_items:
+                [['arrow-left', lambda x: root.controller.screen_link()]]
+        MDLabel:
+            id:title_category
+            font_style:'H4'
+            padding:0,'30dp', 0, '20dp'
+            halign:'center'
+            bold:True
+            adaptive_height:True
+        ScrollView:
+            MDBoxLayout:
+                id:box
+                adaptive_height:True
+                orientation:'vertical'
+                padding:'10dp', '30dp'
+                spacing:'30sp'

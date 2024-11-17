@@ -1,0 +1,30 @@
+<HomeScreenView>
+    MDNavigationLayout:
+        MDScreenManager:
+            MDScreen:
+                MDBoxLayout:
+                    orientation:'vertical'
+                    MDTopAppBar:
+                        title: "Книга рецептiв"
+                        elevation: 0
+                        pos_hint: {"top": 1}
+                        md_bg_color: "#31C823"
+                        specific_text_color: "black"
+                        left_action_items:
+                            [['menu', lambda x: nav_drawer.set_state("open")]]
+                    FitImage:
+                        source:root.model.background_home
+                FloatLayout:
+                    MDIconButton:
+                        icon:'plus'
+                        icon_size:'64dp'
+                        pos_hint:{'center_x':.9, 'center_y':.1}
+                        theme_icon_color: "Custom"
+                        icon_color: app.theme_cls.primary_color
+                        on_release:
+                            root.controller.screen_add_recipe()
+        MDNavigationDrawer:
+            id: nav_drawer
+            radius: (0, 16, 16, 0)
+            ContentNavigationDrawer:
+

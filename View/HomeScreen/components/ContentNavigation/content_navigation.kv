@@ -1,0 +1,47 @@
+<ContentNavigationDrawer>
+    MDBoxLayout:
+        pos_hint:{'center_x':.5, 'center_y':.5}
+        adaptive_height:True
+        orientation:'vertical'
+        spacing:'30dp'
+        MDLabel:
+            text:'Category'
+            adaptive_height:True
+            bold:True
+            halign:'center'
+            font_style:'H3'
+            padding:0, 0, 0, '30dp'
+        MyList:
+            id:list1
+            text:'Першi страви'
+            on_release:
+                app.manager_screens.current = 'select url screen'
+                root.parent.set_state("close")
+                root.save_json('category1')
+        MyList:
+            text:'Другi страви'
+            on_release:
+                app.manager_screens.current = 'select url screen'
+                root.parent.set_state("close")
+                root.save_json('category2')
+        MyList:
+            text:'Салати'
+            on_release:
+                app.manager_screens.current = 'select url screen'
+                root.parent.set_state("close")
+                root.save_json('category3')
+        MyList:
+            text:'Солодке'
+            on_release:
+                app.manager_screens.current = 'select url screen'
+                root.parent.set_state("close")
+                root.save_json('category4')
+<MyList@OneLineListItem+HoverBehavior>
+    theme_text_color:'Custom'
+    text_color:'red'
+    size_hint_y:None
+    height:'80dp'
+    font_style:'H4'
+    bg_color:1,1,0,1
+    on_enter:self.bg_color = 0, 1, 1, 1
+    on_leave:self.bg_color = 1,1,0,1

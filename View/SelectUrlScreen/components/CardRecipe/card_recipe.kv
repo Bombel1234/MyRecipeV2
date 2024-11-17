@@ -1,0 +1,60 @@
+<MyCardRecipe>
+    link_button:link_button
+    icon_button:icon_button
+    icon_delete:icon_delete
+    
+    size_hint_y:None
+    height:box.height + img.height + dp(20)
+    focus_behavior: True
+    unfocus_color: "#43C876"
+    focus_color: "#39C81F"
+    style: "elevated"
+    padding: "10dp"
+    theme_shadow_color: "Custom"
+    shadow_color: "#AA381E"
+    theme_bg_color: "Custom"
+    md_bg_color: "#43C876"
+    md_bg_color_disabled: "#43C876"
+    theme_shadow_offset: "Custom"
+    shadow_offset: (1, -2)
+    theme_shadow_softness: "Custom"
+    shadow_softness: 1
+    theme_elevation_level: "Custom"
+    elevation_level: 4
+    MDBoxLayout:
+        orientation:'vertical'
+        size_hint_y:None
+        height:'500dp'
+        FitImage:
+            id:img
+            source:root.source_img
+            radius:[dp(10), dp(10), 0, 0]
+
+        MDBoxLayout:
+            id:box
+            adaptive_height:True
+            radius:[0, 0, dp(10), dp(10)]
+            orientation:'vertical'
+            MDLabel:
+                id:label
+                text:root.name_recipe
+                adaptive_height:True
+                padding:0,'20dp'
+
+
+            MDRelativeLayout:
+                adaptive_height:True
+                id:box1
+                MDFillRoundFlatButton:
+                    id:link_button
+                    pos_hint:{'right':1}
+                    adaptive_size:True
+                    text:'Перейти за посиланням'
+                MDIconButton:
+                    id:icon_button
+                    icon:'picture-in-picture-top-right-outline'
+                    pos_hint:{'left':1}
+                MDIconButton:
+                    id:icon_delete
+                    icon:'trash-can-outline'
+                    pos_hint:{'center_x':.3}

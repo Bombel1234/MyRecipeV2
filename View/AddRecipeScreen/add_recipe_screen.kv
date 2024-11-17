@@ -1,0 +1,102 @@
+
+
+<AddRecipeScreenView>
+
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            title: "Додавання рецепту"
+            elevation: 4
+            pos_hint: {"top": 1}
+            md_bg_color: "#31C823"
+            specific_text_color: "black"
+            left_action_items:
+                [['arrow-left', lambda x: root.controller.screen_home()]]
+        FitImage:
+            source:'assets/images/background.png'
+            size_hint_y:None
+            height:'200dp'
+        MDLabel:
+            text:'Додай посилання'
+            font_style:'H5'
+            halign:'center'
+            bold:True
+            adaptive_height:True
+            padding:0,'30dp',0, '20dp'
+        MDBoxLayout:
+            adaptive_height:True
+            padding:'20dp', 0, '20dp', 0
+            InputText:
+                id:text_field
+                hint_text:'Paste link'
+        MDLabel:
+            text:'Додай короткий опис рецепту'
+            font_style:'H5'
+            halign:'center'
+            bold:True
+            adaptive_height:True
+            padding:0,'30dp',0, '20dp'
+        MDBoxLayout:
+            adaptive_height:True
+            padding:'20dp', 0, '20dp', 0
+            InputText:
+                id:name_recipe
+                hint_text:'Опис, назва, асоциация'
+        MDFloatLayout:
+            id:float_layout
+            adaptive_height:True
+            padding:0,'50dp',0,0
+        MDAnchorLayout:
+            MDFillRoundFlatIconButton
+                icon:'plus'
+                text:'Зберегти посилання'
+                font_size:'20sp'
+                on_release:root.click_button()
+        MDWidget:
+
+<Content>
+    MDBoxLayout:
+        pos_hint:{'center_x':.5, 'center_y':.5}
+        orientation:'vertical'
+        size_hint:.9, None
+        height:'380dp'
+        # md_bg_color:app.theme_cls.bg_dark
+        md_bg_color:'#8BBE1B'
+        radius:'16dp'
+        padding:'20dp', 0, '20dp', 0
+        MDLabel:
+            text:'Вибери категорiю'
+            halign:'center'
+            font_size:'25sp'
+        OneLineListItem:
+            text:'Першi страви'
+            on_release:root.dispatch("on_release", 'category1')
+        OneLineListItem:
+            text: 'Другi страви'
+            on_release:root.dispatch("on_release", 'category2')
+        OneLineListItem:
+            text:'Салати'
+            on_release:root.dispatch("on_release", 'category3')
+        OneLineListItem:
+            text: 'Солодке'
+            on_release:root.dispatch("on_release", 'category4')
+        MDWidget:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
